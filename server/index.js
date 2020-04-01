@@ -5,7 +5,8 @@ const port = 3000
 
 app.use(require('cors')())
 app.use(express.json())
-
+// 托管静态文件
+app.use('/uploads', express.static(__dirname + '/uploads'))
 
 require('./routes/admin/index')(app)
 require('./plugins/db')(app)
