@@ -4,6 +4,7 @@ import App from './App.vue'
 import http from '../model/axios'
 import router from './router'
 import './plugins/element.js'
+import './style/style.css'
 
 Vue.config.productionTip = false
 
