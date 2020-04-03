@@ -63,7 +63,7 @@ export default {
       }
       this.$router.push("/ads/list");
       this.$message({
-        type: "success",
+        type: "success", 
         message: "保存成功"
       });
     },
