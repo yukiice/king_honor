@@ -5,7 +5,7 @@
       <el-form-item label="名称">
         <el-input v-model="model.name"></el-input>
       </el-form-item>
-      <el-form-item label="广告" >
+      <el-form-item label="广告">
         <el-button size="small" @click="model.items.push({})">
           <i class="el-icon-plus"></i> 添加广告
         </el-button>
@@ -17,7 +17,8 @@
             <el-form-item label="图片" style="margin-top:0.5rem;">
               <el-upload
                 class="avatar-uploader"
-                :action="$http.defaults.baseURL +'/upload'"
+                :action="uploadUrl"
+                :headers="getAuthHeaders()"
                 :show-file-list="false"
                 :on-success="res=>$set(item,'image',res.url)"
               >
@@ -63,7 +64,7 @@ export default {
       }
       this.$router.push("/ads/list");
       this.$message({
-        type: "success", 
+        type: "success",
         message: "保存成功"
       });
     },
@@ -79,5 +80,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

@@ -41,7 +41,8 @@
           <el-form-item label="头像">
             <el-upload
               class="avatar-uploader"
-              :action="$http.defaults.baseURL +'/upload'"
+              :action="uploadUrl"
+              :headers="getAuthHeaders()"
               :show-file-list="false"
               :on-success="afterUpLoad"
             >
@@ -81,7 +82,8 @@
               <el-form-item label="图标">
                 <el-upload
                   class="avatar-uploader"
-                  :action="$http.defaults.baseURL +'/upload'"
+                  :action="uploadUrl"
+                  :headers="getAuthHeaders()"
                   :show-file-list="false"
                   :on-success="res=>$set(item,'icon',res.url)"
                 >
@@ -95,7 +97,9 @@
               <el-form-item label="小提示">
                 <el-input v-model="item.tips" type="textarea"></el-input>
               </el-form-item>
-              <el-form-item ><el-button size="small" type="danger" @click="model.skills.splice(i,1)">删除</el-button></el-form-item>
+              <el-form-item>
+                <el-button size="small" type="danger" @click="model.skills.splice(i,1)">删除</el-button>
+              </el-form-item>
             </el-col>
           </el-row>
         </el-tab-pane>
@@ -169,5 +173,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
