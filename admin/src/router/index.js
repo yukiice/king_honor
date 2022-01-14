@@ -128,9 +128,9 @@ const router = new VueRouter({
 })
 // 路由守卫，防止随意访问
 router.beforeEach((to, from, next) => {
-  if (!to.meta.isPublic && !localStorage.token) {
-    return next('/login')
-  }
+  // if (!to.meta.isPublic && !localStorage.token) {
+  //   return next('/login')
+  // }
   next()
 })
 

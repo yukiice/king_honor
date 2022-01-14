@@ -14,7 +14,7 @@
           :show-file-list="false"
           :on-success="afterUpLoad"
         >
-          <img v-if="model.icon" :src="model.icon" class="avatar" />
+          <img v-if="model.icon" :src="baseurl + model.icon" class="avatar" />
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
       </el-form-item>

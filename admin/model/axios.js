@@ -4,7 +4,7 @@ import Vue from 'vue'
 
 import router from '../src/router'
 const http = axios.create({
-    baseURL: 'http://localhost:3000/admin/api'
+    baseURL: 'http://192.168.1.30:3000/admin/api'
 })
 
 // Add a request interceptor

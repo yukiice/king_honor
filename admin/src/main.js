@@ -7,7 +7,7 @@ import './plugins/element.js'
 import './style/style.css'
 
 Vue.config.productionTip = false
-
+Vue.prototype.baseurl = 'http://192.168.1.30:3000'
 Vue.prototype.$http = http
 
 Vue.mixin({
